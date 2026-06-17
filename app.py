@@ -136,7 +136,7 @@ with gr.Blocks(title="Duke Policy RAG Reliability Checker", theme=gr.themes.Soft
                 reliability = gr.Textbox(label="Reliability signal")
 
         sources = gr.Dataframe(
-            headers=["rank", "title", "doc_id", "score", "url", "evidence"],
+            headers=["rank", "title", "doc_id", "retrieval score", "url", "evidence"],
             label="Retrieved evidence",
             wrap=True,
         )
