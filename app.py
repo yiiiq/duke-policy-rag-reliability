@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from functools import lru_cache
 from pathlib import Path
 
@@ -199,4 +200,4 @@ with gr.Blocks(title="Duke Policy RAG Reliability Checker", theme=gr.themes.Soft
 
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(server_name="0.0.0.0", server_port=int(os.getenv("PORT", "7860")), share=False)
