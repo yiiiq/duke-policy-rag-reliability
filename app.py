@@ -200,4 +200,9 @@ with gr.Blocks(title="Duke Policy RAG Reliability Checker", theme=gr.themes.Soft
 
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=int(os.getenv("PORT", "7860")), share=False)
+    demo.queue()
+    demo.launch(
+        server_name=os.getenv("GRADIO_SERVER_NAME", "0.0.0.0"),
+        server_port=int(os.getenv("PORT", os.getenv("GRADIO_SERVER_PORT", "7860"))),
+        share=os.getenv("GRADIO_SHARE", "false").lower() == "true",
+    )
